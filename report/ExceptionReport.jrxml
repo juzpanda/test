@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ExceptioinReport1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19793564-6eac-4e43-8646-b00abb391946">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="47"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM BOOKING WHERE RESERVESTATUS = 'CANCELLED']]>
+	</queryString>
+	<field name="CUSTOMERID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ROOMID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CHECKINDATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RESERVESTATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="CUSTOMERID">
+		<groupExpression><![CDATA[$F{CUSTOMERID}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="125" y="16" width="428" height="24" forecolor="#CC0000" uuid="dbb33823-f510-4192-b852-6309f2afdc2a"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CUSTOMERID}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" x="0" y="16" width="185" height="24" forecolor="#CC0000" uuid="fcf01fd8-613e-417f-86df-fc29b5a4849f"/>
+					<textElement>
+						<font size="15"/>
+					</textElement>
+					<text><![CDATA[CUSTOMER ID : ]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="185" height="15" uuid="e9a8269c-6e7f-4ba6-b1d2-2acf8e89a29e"/>
+				<text><![CDATA[Report ID : ER1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="0" y="15" width="513" height="33" uuid="6aba04cf-d78a-4300-b1f7-44e406a62dfd"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[                Eastern and Oriental Hotel ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="16" y="48" width="513" height="33" uuid="84d5e6fe-f935-498d-921a-48adfdd6416e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[                            Room Cancellation Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="140" y="81" width="293" height="65" uuid="8d1a6e44-da20-4355-917c-352832bf2496"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[10, Lebuh Farquhar, 10200 Georgetown, Pulau Pinang Telephone :02-222 2000]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="445" y="0" width="197" height="20" uuid="bd2294ac-0b62-47b5-b565-0db679a73a81"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="3affaf4c-89b7-4fdf-a331-4ebf292338d9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="185" height="15" uuid="7ee7520f-80a8-4e8d-b244-23baab008be9"/>
+				<text><![CDATA[ROOMID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="185" height="15" uuid="a74a0efe-62d4-478a-acea-00fa31e1ab30"/>
+				<text><![CDATA[CHECKINDATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="185" height="15" uuid="0ae1d459-4e57-4936-a41b-d27bac46b9ad"/>
+				<text><![CDATA[RESERVESTATUS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="791d6ce1-1ea8-4823-8639-56366fd3d3c0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="8bf6a818-4c9b-4166-a63c-e5604d293161"/>
+				<textFieldExpression><![CDATA[$F{ROOMID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="5bfe11a2-7053-4a39-b961-0489ce8764ca"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy").format($F{CHECKINDATE})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="f88e8027-bd70-4d90-99b2-a8051a0579b8"/>
+				<textFieldExpression><![CDATA[$F{RESERVESTATUS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="e684517e-eb3f-4009-8e5e-82fa8e581f80"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="c2bf22cd-7129-4094-b5aa-511231831f01"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="289978f2-4d9e-4507-a71c-3b76cc994a8e"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,7 @@
+Run Login.java
+
+Manager ID:M1
+Password:1234567890
+
+Staff ID:S2
+Password:1234567890

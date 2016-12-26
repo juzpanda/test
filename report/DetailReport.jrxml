@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DetailReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d743cef8-87ce-406d-b154-020f0b221d22">
+	<property name="ireport.zoom" value="1.2100000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT * FROM BOOKING ORDER BY ROOMID]]>
+	</queryString>
+	<field name="CUSTOMERID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ROOMID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BOOKINGDATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CHECKINDATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CHECKOUTDATE" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTALPRICE" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RESERVESTATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="ROOMID">
+		<groupExpression><![CDATA[$F{ROOMID}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="96" y="16" width="457" height="24" forecolor="#990099" uuid="33b5edcf-461b-4137-8122-92b15a8627fc"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ROOMID}]]></textFieldExpression>
+				</textField>
+				<elementGroup>
+					<staticText>
+						<reportElement style="Column header" x="0" y="16" width="185" height="24" forecolor="#990099" uuid="cd21885a-e700-4bc1-8620-e5c912970d6b"/>
+						<textElement>
+							<font size="15"/>
+						</textElement>
+						<text><![CDATA[ROOM ID : ]]></text>
+					</staticText>
+				</elementGroup>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="513" height="33" uuid="7c272f8c-d4b9-4947-88b0-703aa2648ab1"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[                Eastern and Oriental Hotel ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="140" y="79" width="293" height="65" uuid="0d92baac-3dfa-4aa6-aca5-1fdb8a1f0d4e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[10, Lebuh Farquhar, 10200 Georgetown, Pulau Pinang Telephone :02-222 2000]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="445" y="0" width="197" height="20" uuid="fa3f8223-c24d-4232-9699-0a2d75e16914"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="185" height="15" uuid="10588a7b-9e0b-498a-89cd-8219e79fe3cd"/>
+				<text><![CDATA[Report ID : DR1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="-33" y="46" width="513" height="33" uuid="d22bd00f-17b8-4218-a203-eb7d54f733c9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[                            Daily Room Reservation Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="1220e6cb-5c10-4fb9-bfbd-6c3a4b401dd1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="185" height="15" uuid="c3fd6c6c-5dc1-44cc-8e1d-e89e18266d71"/>
+				<text><![CDATA[CHECKINDATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="185" height="15" uuid="e236ce2c-9349-4e8c-b12e-23bd55c0e5de"/>
+				<text><![CDATA[TOTALPRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="185" height="15" uuid="33405ac5-6c68-4a6e-a3fc-a9cb20e7c4ce"/>
+				<text><![CDATA[CUSTOMERID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="2d0bdfe0-1249-4b77-8b7b-bebc14b2eb66"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="13466e80-02c8-429b-b596-f536a059668b"/>
+				<textFieldExpression><![CDATA[$F{TOTALPRICE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="b890282f-c49d-4d26-b5cf-c8d77d5c138b"/>
+				<textFieldExpression><![CDATA[$F{CUSTOMERID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="e420e0ef-48c8-48bf-94d8-964e2b43d439"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy").format($F{CHECKINDATE})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7b448089-2934-4b2e-aae5-00546b0e8a0a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="f43ef7cb-ae6d-47f1-9776-ae95c8ed81ba"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="1d754e1c-54af-436b-b414-911f84b92078"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
